@@ -6,9 +6,11 @@
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<security:http auto-config="true" >
-		<security:form-login login-page="/loginForm" authentication-failure-url="/loginForm?ng" />
-		<security:intercept-url pattern="/loginOk*" access="ROLE_USER" />
-		<security:intercept-url pattern="/loginOk*" access="ROLE_ADMIN" />
+		<security:form-login login-page="/loginForm.do" />
+		<security:intercept-url pattern="/login.*" access="ROLE_USER"/>
+		<security:intercept-url pattern="/user.*" access="ROLE_USER"/>
+		<security:intercept-url pattern="/**" access="ROLE_ADMIN"/>
+		<security:intercept-url pattern="/test.*" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 	</security:http>
 	
 	<security:authentication-manager>

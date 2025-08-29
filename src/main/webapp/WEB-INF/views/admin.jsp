@@ -11,5 +11,7 @@
 	<h2>로그인 인증 되었습니다.</h2>
 	<h2>이 파일은 admin.jsp 입니다.</h2>
 	<hr>
+	
+	<a href="logout.do">로그 아웃</a>
 </body>
 </html>
